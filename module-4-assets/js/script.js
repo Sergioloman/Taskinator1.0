@@ -8,6 +8,17 @@ var taskFormHandler = function(event) {
     var taskNameInput = document.querySelector("input[name ='task-name']").value;
     var taskTypeInput = document.querySelector("select[name='task-type']").value;
     
+    //making a conditional statement so no empty cells get inserted
+    if (!taskNameInput || !taskTypeInput) {
+        alert("you need to fill out the task form!");
+        return false;
+    }
+
+    formEl.reset();
+    
+    //reads: if not name OR type then, ALERT + return FALSE
+
+
     //package up data as an object
     var taskDataObj = {
         name: taskNameInput,
